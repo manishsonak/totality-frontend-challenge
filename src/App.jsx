@@ -1,15 +1,21 @@
-import Hearder from "./Components/Header/Hearder"
-import Footer from "./Components/Header/Home/Footer"
 
-import Home from "./Components/Header/Home/Home"
-import Subscribe from "./Components/Header/Home/Subscribe"
+import Login from "./Components/Auth/Login"
+import Hearder from "./Components/Header/Hearder"
+import Footer from "./Components/Home/Footer"
+
+import Home from "./Components/Home/Home"
+import Subscribe from "./Components/Home/Subscribe"
 import Navbar from "./Components/Header/Navbar"
 
 import {BrowserRouter as Router, Routes , Route} from'react-router-dom'
+import Signup from "./Components/Auth/Signup"
+import Cart from "./Components/Cart/Cart"
+
 
 
 function App() {
   
+
 
   return (
   <>
@@ -18,11 +24,10 @@ function App() {
   <Hearder/>
   <Navbar/>
   <Routes>
-
     <Route path="/" element={<Home/>}/>
-
-
-    {/* <Route path=".login" element={Login}/> */}
+    <Route path="/login" element={<Login/>}/>
+    <Route path="/signup" element={<Signup/>}/>
+    <Route path="/cart" element={<Cart/>}/>
   </Routes>
   
 <Subscribe/>

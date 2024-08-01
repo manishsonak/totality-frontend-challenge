@@ -2,8 +2,8 @@
 /* eslint-disable react/no-unknown-property */
 
 import { useContext, useEffect, useState } from "react";
-import Card from "../../Cards/Card";
-import MyContext from "../../Context/MyContext";
+import MyContext from "../Context/MyContext";
+import Card from '../Cards/Card'
 
 function Lisining() {
   const {filtered,filterbycity,filterbyroom,searchhotel}=useContext(MyContext);
@@ -58,7 +58,7 @@ function Lisining() {
         <button className="px-3 py-2 text-white bg-blue-500 " onClick={Serachfilter}>Search</button>
 
       </div>
-      <div className="flex gap-8 lists lg:h-[60vh] px-4 py-4 lg:flex-row flex-col">
+      <div className="flex flex-col gap-8 px-4 py-4 lists lg:h-screen lg:flex-row">
         <div className="filters min-w-52">
           <div className="lg:pl-10 by_bad">
             <h2 className="">Filter by Bedrooms</h2>
@@ -96,11 +96,11 @@ function Lisining() {
               </div>
           </div>
         </div>
-        <div className="right">
-        <div className="flex flex-wrap gap-4 overflow-scroll lg:max-h-screen hidescroll">
+        <div className=" right">
+        <div className="flex flex-wrap gap-4 py-5 overflow-scroll rounded-lg shadow-md lg:max-h-screen hidescroll">
                 {
        filtered.length>0 && filtered?.map((room)=>
-          <Card key={room.id} img={room.image} name={room.name} location={room.location} price={room.price} badroom={room.bedroom}/>
+          <Card key={room.id} img={room.image} name={room.name} location={room.location} price={room.price} badroom={room.bedroom} data={room}/>
         )
         || <h2 className="block w-full text-2xl text-center text-gray-400"> No Rooms Available</h2>
        }

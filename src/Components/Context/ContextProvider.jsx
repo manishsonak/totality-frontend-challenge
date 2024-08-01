@@ -7,9 +7,14 @@ import MyContext from "./MyContext"
 
 const ContextProvider = ({children}) => {
 
-    const [data,setdata]=useState();
+
 
     const [filtered,setfiltered]=useState([])
+    
+
+    const [token,setToken]=useState("");
+
+    const [cart,setCart]=useState([])
 
     const rooms=[
         {
@@ -206,7 +211,7 @@ const ContextProvider = ({children}) => {
     
 
   return (
-   <MyContext.Provider value={{data,setdata,rooms,filterbycity,filtered,allrooms,filterbyroom,searchhotel}}>
+   <MyContext.Provider value={{cart,setCart,token,setToken,rooms,filterbycity,filtered,allrooms,filterbyroom,searchhotel}}>
     {children}
    </MyContext.Provider>
   )
