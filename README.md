@@ -49,7 +49,7 @@ bash
 Copy code
 cd client
 npm start
-The frontend development server will run on http://localhost:3000.
+The frontend development server will run on http://localhost:5173.
 
 Usage
 Register/Login: Create an account or login with existing credentials using Firebase authentication.
